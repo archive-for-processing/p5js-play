@@ -11,7 +11,7 @@ function draw() {
   }
 }
 
-function mouseReleased {
+function mouseReleased() {
     var nova_bola = new Bola(mouseX, mouseY);
     lista_de_bolas.push(nova_bola);
   }
