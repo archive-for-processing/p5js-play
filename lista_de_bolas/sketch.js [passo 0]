@@ -6,22 +6,23 @@ function setup() {
 
 function draw() {
   background(63);
-  
-  if (isMousePressed) {
-    var b = new Bola(mouseX, mouseY);
-    lista_de_bolas.push(b);
-  }
   for (var i = 0; i < lista_de_bolas.length; i++) {
-    lista_de_bolas[i].display();
+    lista_de_bolas[i].desenha();
   }
 }
 
+function mouseReleased {
+    var nova_bola = new Bola(mouseX, mouseY);
+    lista_de_bolas.push(nova_bola);
+  }
+
+// 'Classe' Bola
 function Bola(x, y) {
   this.x = x;
   this.y = y;
   this.tamanho = 16;
   
-  this.display = function() {
+  this.desenha = function() {
     rectMode(CENTER);
     fill(127);
     stroke(255);
