@@ -1,4 +1,5 @@
-# Exemplos de código p5*js (biblioteca JavaScript da fundação Processing)
+# Exemplos de código p5*js
+(biblioteca JavaScript da fundação Processing)
 
 Baixe a biblioteca em http://p5js.org/download/ <br>
 ou o IDE para iniciantes em https://github.com/processing/p5.js-editor/releases
