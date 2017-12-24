@@ -25,7 +25,7 @@ function draw() {
   if (params && params.frase) {
     var frase = params.frase.replace(/_/g,' ');
     frase = frase.replace(/;/g,'\n');
-    textSize(32);
+    textSize(24);
     text(frase, 50, 50);
   }    
   textSize(8);
