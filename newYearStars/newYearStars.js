@@ -1,5 +1,7 @@
 /*
  * Many Stars
+ * (c)2017 Alexandre B A Villares
+ * https://abav.lugaralgum.com
  */
 var starList = [];
 var params;
@@ -18,11 +20,16 @@ function setup() {
 
 function draw() {
   background(0);
+  textFont("sans-serif");
+  fill(255,200);
   if (params && params.frase) {
-    fill(255);
-    textFont("sans-serif");
-    text(params.frase, 100, 100);
+    var frase = params.frase.replace(/_/g,' ');
+    frase = frase.replace(/;/g,'\n');
+    textSize(32);
+    text(frase, 50, 50);
   }    
+  textSize(8);
+  text("Alexandre B A Villares", 50, windowHeight - 50);
   for (var i = 0; i < starList.length; i++) { 
     starList[i].plot();
   }
@@ -30,6 +37,13 @@ function draw() {
 
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
+}
+
+function mousePressed() {
+ if ( dist(mouseX, mouseY,  50, windowHeight - 50) < 200){
+   var win = window.open('https://abav.lugaralgum.com/');
+   
+ }
 }
 
 function Star(x, y, radius1, radius2, npoints) {
