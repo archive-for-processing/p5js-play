@@ -24,8 +24,8 @@ function draw() {
   fill(255,200);
   if (params && params.frase) {
     var frase = decodeURI(params.frase)
-    frase = frase.replace(/%2C%3B/g,'\n');
-    frase = frase.replace(/%3B/g,'\n');
+    frase = frase.replace('%2C%3B','\n');
+    frase = frase.replace('%3B','\n');
     frase = frase.replace(/_/g,' ');
     frase = frase.replace(/;/g,'\n');
     textSize(24);
