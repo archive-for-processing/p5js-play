@@ -20,17 +20,17 @@ function setup() {
 
 function draw() {
   background(0);
-  textFont("sans-serif");
+  textFont("monospace");
   fill(255,200);
   if (params && params.frase) {
     var frase = decodeURI(params.frase)
     frase = frase.replace(/_/g,' ');
     frase = frase.replace(/;/g,'\n');
     textSize(24);
-    text(frase, 50, 50);
+    text(frase, 50, windowHeight - 100);
   }    
   textSize(8);
-  text("Alexandre B A Villares", 50, windowHeight - 50);
+  text("Alexandre B A Villares", windowWidth - 120, windowHeight - 30);
   for (var i = 0; i < starList.length; i++) { 
     starList[i].plot();
   }
@@ -55,7 +55,6 @@ function Star(x, y, radius1, radius2, npoints) {
   this.angle = TWO_PI / npoints;
   this.halfAngle = this.angle/2.0;
   this.color = color(random(256), random(256), random(256), 50);
-
   this.plot = function() {
     push();
     translate(this.x, this.y);
