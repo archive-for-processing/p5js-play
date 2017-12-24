@@ -28,6 +28,7 @@ function draw() {
     frase = frase.replace('%3B','\n');
     frase = frase.replace('%2C',',');
     frase = frase.replace('%2C',',');
+    frase = frase.replace('%2C',',');
     frase = frase.replace(/_/g,' ');
     frase = frase.replace(/;/g,'\n');
     textSize(24);
