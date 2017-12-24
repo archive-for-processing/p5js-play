@@ -41,7 +41,7 @@ function windowResized() {
 }
 
 function mousePressed() {
- if ( dist(mouseX, mouseY,  50, windowHeight - 50) < 200){
+ if ( dist(mouseX, mouseY,  windowWidth - 120, windowHeight - 30) < 200){
    var win = window.open('https://abav.lugaralgum.com/');
    
  }
