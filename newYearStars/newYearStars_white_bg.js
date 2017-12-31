@@ -5,7 +5,7 @@
  */
 
 var starList = [];
-var params;
+
 function setup() {
   canvas = createCanvas(windowWidth, windowHeight*2);
   canvas.position(0, 0);
@@ -13,7 +13,7 @@ function setup() {
   noStroke();
   for (var i = 0; i < 200; i++) {
     newStar = new Star(random(width), 
-      random(200, height-200), 
+      random(60, height-200), 
       random(20, 60), random(50, 120), 
       int(random(3, 30)));
     starList.push(newStar);
