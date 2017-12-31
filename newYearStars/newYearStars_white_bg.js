@@ -7,13 +7,13 @@
 var starList = [];
 var params;
 function setup() {
-  canvas = createCanvas(windowWidth, windowHeight);
+  canvas = createCanvas(windowWidth, windowHeight*2);
   canvas.position(0, 0);
   canvas.style('z-index', '-1');
   noStroke();
   for (var i = 0; i < 200; i++) {
     newStar = new Star(random(width), 
-      random(height), 
+      random(height-200), 
       random(20, 60), random(50, 120), 
       int(random(3, 30)));
     starList.push(newStar);
