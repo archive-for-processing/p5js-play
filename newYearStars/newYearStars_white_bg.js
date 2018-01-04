@@ -3,15 +3,17 @@
  * (c)2017 Alexandre B A Villares
  * https://abav.lugaralgum.com
  */
+
 var starList = [];
-var params;
+
 function setup() {
-  createCanvas(windowWidth, windowHeight);
-  params = getURLParams(); 
+  canvas = createCanvas(windowWidth, windowHeight*2);
+  canvas.position(0, 0);
+  canvas.style('z-index', '-1');
   noStroke();
   for (var i = 0; i < 200; i++) {
     newStar = new Star(random(width), 
-      random(height), 
+      random(200, height-200), 
       random(20, 60), random(50, 120), 
       int(random(3, 30)));
     starList.push(newStar);
@@ -19,23 +21,7 @@ function setup() {
 }
 
 function draw() {
-  background(255);
-  textFont("monospace");
-  fill(255,200);
-  if (params && params.frase) {
-    var frase = decodeURI(params.frase)
-    frase = frase.replace('%3B','\n');
-    frase = frase.replace('%3B','\n');
-    frase = frase.replace('%2C',',');
-    frase = frase.replace('%2C',',');
-    frase = frase.replace('%2C',',');
-    frase = frase.replace(/_/g,' ');
-    frase = frase.replace(/;/g,'\n');
-    textSize(24);
-    text(frase, 50, windowHeight - 100);
-  }    
-  textSize(8);
-  text("Alexandre B A Villares", windowWidth - 120, windowHeight - 30);
+  clear();
   for (var i = 0; i < starList.length; i++) { 
     starList[i].plot();
   }
@@ -45,12 +31,6 @@ function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
 }
 
-function mousePressed() {
- if ( dist(mouseX, mouseY,  windowWidth - 120, windowHeight - 30) < 200){
-   var win = window.open('https://abav.lugaralgum.com/');
- }
-}
-
 function Star(x, y, radius1, radius2, npoints) {
   this.x = x;
   this.y = y;
@@ -58,7 +38,7 @@ function Star(x, y, radius1, radius2, npoints) {
   this.radius2 = radius2;
   this.angle = TWO_PI / npoints;
   this.halfAngle = this.angle/2.0;
-  this.color = color(random(256), random(256), random(256), 50);
+  this.color = color(random(256), random(256), random(256), 40);
   this.plot = function() {
     push();
     translate(this.x, this.y);
