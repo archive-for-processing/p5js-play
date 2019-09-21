@@ -2,12 +2,13 @@
  * Many Stars
  */
 var starList = [];
-var myStar;
+// var myStar; // used on an initial demo step
+
 function setup() {
   createCanvas(windowWidth, windowHeight);
   noStroke();
   for (var i = 0; i < 200; i++) {
-    newStar = new Star(random(width), 
+    var newStar = new Star(random(width), 
       random(height), 
       random(20, 60), random(50, 120), 
       int(random(3, 30)));
