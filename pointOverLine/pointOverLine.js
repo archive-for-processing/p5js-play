@@ -1,3 +1,6 @@
+// Code ported to JavaScript/P5.js from the Java code by Jeffrey Thompson:
+// http://www.jeffreythompson.org/collision-detection/line-point.php
+
 function setup() {
   createCanvas(500, 500);
 }
